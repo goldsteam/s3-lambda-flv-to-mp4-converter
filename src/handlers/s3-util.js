@@ -30,7 +30,7 @@ const AWS = require('aws-sdk'),
 			Bucket: bucket,
 			Key: fileKey,
 			Body: fs.createReadStream(filePath),
-			ACL: 'private',
+			ACL: 'public',
 			ContentType: contentType
 		}).promise();
 	};
