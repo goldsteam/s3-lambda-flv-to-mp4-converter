@@ -14,7 +14,7 @@ exports.handler = function (eventObject, context) {
 		resultKey = key.replace(/\.[^.]+$/, EXTENSION),
 		workdir = os.tmpdir(),
 		inputFile = path.join(workdir,  id + path.extname(key)),
-		outputFile = path.join(workdir, path.basename(key,path.extname(key)) + EXTENSION);
+		outputFile = path.join(workdir, path.dirname(key).replace('tmpFlv/','/')+path.basename(key,path.extname(key)) + EXTENSION);
 
 
 	console.log('converting', inputBucket, key, 'using', inputFile);
